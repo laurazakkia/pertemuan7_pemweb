@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="profile-top-bar">
+        <div class="back-button">
+            <img src="static\images\back.png" alt="Kembali">
+        </div>
+        <div class="profile-top-info">
+            <h1>laura z.</h1>
+            <span class="post-count">1 post</span>
+        </div>
+    </div>
+
+    <div class="cover-photo"></div>
+
+    <div class="profile-header">
+        <div class="profile-picture">
+            <img src="static/images/laura1.jpg" alt="Profile Picture">
+        </div>
+        <button class="edit-profile-btn" id="editProfileBtn">Edit profile</button>
+    </div>
+
+    <div id="toastNotification" class="toast">
+        Tombol "Edit Profile" diklik!
+    </div>
+
+    <script>
+        document.getElementById('editProfileBtn').addEventListener('click', function () {
+            const toast = document.getElementById('toastNotification');
+            toast.classList.add('show');
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        });
+    </script>
+
+    <div class="profile-info">
+        <h2>Laura z.</h2>
+        <div class="username">@tongsengayamm</div>
+        <div class="follow-stats">
+            <a href="/following" class="following-link">7 Following</a>
+            <span>1 Follower</span>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <div class="tab active">Posts</div>
+        <div class="tab">Reply</div>
+        <div class="tab">Highlight</div>
+        <div class="tab">Article</div>
+        <div class="tab">Media</div>
+        <div class="tab">Like</div>
+    </div>
+
+    <div class="post">
+        <div class="post-header">
+            <div class="post-profile-pic">
+                <img src="static/images/laura1.jpg" alt="Profile Picture">
+            </div>
+            <div class="post-profile-info">
+                <span class="post-user">laura z.</span>
+                <span class="post-username">@tongsengayamm</span>
+                <span>·</span>
+                <span class="post-time">26 Jun 2023</span>
+            </div>
+        </div>
+
+        <div class="post-content">
+            I kin you sender wkwk. Nyesel banget kenapa waktu itu aku ciut duluan ga berani ngambil univ impian aku, but
+            then i realized aku belum tentu bisa dapat skor segini kalo waktu itu aku milih univ impianku, change one
+            action could possibly change the entire scenario
+        </div>
+    </div>
+
+    <button class="posting-button" id="postingButton">Posting</button>
+
+    <div class="posting-modal" id="postingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+
+                <textarea class="post-input" placeholder="Apa yang sedang terjadi?" id="postContent"></textarea>
+
+            </div>
+            <div class="modal-footer">
+                <button class="post-submit" id="submitPost" disabled>Posting</button>
+            </div>
+        </div>
+    </div>
+
+
+    <a href="/logout">
+        <button type="button" class="logout-button">Logout</button>
+    </a>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const postingButton = document.getElementById('postingButton');
+            const postingModal = document.getElementById('postingModal');
+            const closeModal = document.getElementById('closeModal');
+            const postContent = document.getElementById('postContent');
+            const submitPost = document.getElementById('submitPost');
+            const audienceSelector = document.getElementById('audienceSelector');
+
+
+            postingButton.addEventListener('click', function () {
+                postingModal.style.display = 'flex';
+                postContent.focus();
+            });
+
+
+            closeModal.addEventListener('click', function () {
+                postingModal.style.display = 'none';
+            });
+
+
+            postingModal.addEventListener('click', function (e) {
+                if (e.target === postingModal) {
+                    postingModal.style.display = 'none';
+                }
+            });
+
+            postContent.addEventListener('input', function () {
+                submitPost.disabled = postContent.value.trim() === '';
+            });
+
+            submitPost.addEventListener('click', function () {
+                alert('Postingan berhasil dibuat: ' + postContent.value);
+                postContent.value = '';
+                postingModal.style.display = 'none';
+                submitPost.disabled = true;
+            });
+
+        });
+    </script>
+</body>
+
+</html>

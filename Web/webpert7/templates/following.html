@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Following</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/following.css') }}">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <div class="back-button">
+                <a href="/home" class="following-link"><img src="static\images\back.png" alt="Kembali"></a>
+            </div>
+            <div class="header-info">
+                <h1>laura z.</h1>
+                <p>@tongsengayamm</p>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active">Following</div>
+            <div class="tab">Folllower</div>
+        </div>
+
+        <div class="followers-container">
+
+            <div class="follower-item">
+                <div class="follower-info">
+                    <div class="follower-avatar">
+                        <img src="static/images/avattar.jpeg" alt="Profile Picture">
+                    </div>
+                    <div class="follower-details">
+                        <h3>UINSAFESS</h3>
+                        <p>@uinsafess</p>
+                    </div>
+                </div>
+                <button class="follow-btn">Follow</button>
+            </div>
+
+
+            <div class="follower-item">
+                <div class="follower-info">
+                    <div class="follower-avatar">
+                        <img src="static/images/avattar.jpeg" alt="Profile Picture">
+                    </div>
+                    <div class="follower-details">
+                        <h3>base @uinsafesss</h3>
+                        <p>@satpamuinsa</p>
+                    </div>
+                </div>
+                <button class="follow-btn">Follow</button>
+            </div>
+
+            <div class="follower-item">
+                <div class="follower-info">
+                    <div class="follower-avatar">
+                        <img src="static/images/avattar.jpeg" alt="Profile Picture">
+                    </div>
+                    <div class="follower-details">
+                        <h3>Tanyarl</h3>
+                        <p>@tanyakanrl</p>
+                    </div>
+                </div>
+                <button class="follow-btn">Follow</button>
+            </div>
+
+            <div class="follower-item">
+                <div class="follower-info">
+                    <div class="follower-avatar">
+                        <img src="static/images/avattar.jpeg" alt="Profile Picture">
+                    </div>
+                    <div class="follower-details">
+                        <h3>Tanyarifes</h3>
+                        <p>@tanyarifes</p>
+                    </div>
+                </div>
+                <button class="follow-btn">Follow</button>
+            </div>
+
+            <div class="follower-item">
+                <div class="follower-info">
+                    <div class="follower-avatar">
+                        <img src="static/images/avattar.jpeg" alt="Profile Picture">
+                    </div>
+                    <div class="follower-details">
+                        <h3>MENFESS UINSA</h3>
+                        <p>@menfessuinsa</p>
+                    </div>
+                </div>
+                <button class="follow-btn">Follow</button>
+            </div>
+
+            <div class="follower-item">
+                <div class="follower-info">
+                    <div class="follower-avatar">
+                        <img src="static/images/avattar.jpeg" alt="Profile Picture">
+                    </div>
+                    <div class="follower-details">
+                        <h3>MENFESS UINSA</h3>
+                        <p>@menfessuinsa</p>
+                    </div>
+                </div>
+                <button class="follow-btn">Follow</button>
+            </div>
+
+            <div class="follower-item">
+                <div class="follower-info">
+                    <div class="follower-avatar">
+                        <img src="static/images/avattar.jpeg" alt="Profile Picture">
+                    </div>
+                    <div class="follower-details">
+                        <h3>MENFESS UINSA</h3>
+                        <p>@menfessuinsa</p>
+                    </div>
+                </div>
+                <button class="follow-btn">Follow</button>
+            </div>
+
+            <div class="toast">Tombol diklik!</div>
+
+            <script>
+                document.addEventListener('click', function (e) {
+                    if (e.target.classList.contains('follow-btn')) {
+                        const toast = document.querySelector('.toast');
+                        toast.classList.add('show');
+                        setTimeout(() => toast.classList.remove('show'), 3000);
+                    }
+                });
+            </script>
+
+        </div>
+    </div>
+</body>
+
+</html>
